@@ -6,6 +6,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { SplashComponent } from './splash/splash.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path: 'product',
     component: ProductComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'product/:id',
+    component: ProductDetailsComponent,
     pathMatch: 'full',
   },
   {

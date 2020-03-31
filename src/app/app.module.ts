@@ -20,6 +20,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductComponent } from './product/product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { IndexnavbarComponent } from './elements/indexnavbar/indexnavbar.component';
 
 
 
@@ -29,7 +31,9 @@ import { ProductComponent } from './product/product.component';
     AdminLayoutComponent,
     SplashComponent,
     LoginComponent,
-    ProductComponent
+    ProductComponent,
+    ProductDetailsComponent,
+    IndexnavbarComponent
   ],
   imports: [
     AppRoutingModule,
