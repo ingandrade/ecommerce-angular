@@ -10,11 +10,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
 import { RouterModule } from '@angular/router';
+import { SplashComponent } from './splash/splash.component';
+import { LoginComponent } from './login/login.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
+import { ProductComponent } from './product/product.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    SplashComponent,
+    LoginComponent,
+    ProductComponent
   ],
   imports: [
     AppRoutingModule,
@@ -24,6 +39,13 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     ComponentsModule,
     RouterModule,
+    MatButtonModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTooltipModule,
+    MatIconModule
 
   ],
   providers: [],

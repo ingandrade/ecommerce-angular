@@ -3,14 +3,27 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { SplashComponent } from './splash/splash.component';
+import { LoginComponent } from './login/login.component';
+import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    component: SplashComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
     pathMatch: 'full',
-  }, {
+  },
+  {
+    path: 'product',
+    component: ProductComponent,
+    pathMatch: 'full',
+  },
+  {
     path: '',
     component: AdminLayoutComponent,
     children: [{

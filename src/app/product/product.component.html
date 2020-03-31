@@ -1,0 +1,16 @@
+<div class="content">
+    <div class="row mx-0">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let p of produc.Product">
+            <div class="card" style="width: 18rem;">
+                <img src="../assets/img/product/{{ p.img }}" class="card-img-top" alt="..." height="250">
+                <div class="card-body">
+                  <h5 class="card-title">{{ p.Title}}</h5>
+                  <p class="card-text">{{ p.description }}</p>
+                  <div class="col-12 text-center">
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
