@@ -15,13 +15,14 @@ export class IndexnavbarComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
   currentUser: User;
+  admin: boolean;
 
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService
   ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-    console.log(this.currentUser);
+    this.admin = false;
   }
 
   logout() {
@@ -35,7 +36,9 @@ export class IndexnavbarComponent implements OnInit {
 
   authicationUser(){
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-    console.log(this.currentUser);
+    if(this.currentUser.user === 'admin'){
+      this.admin = true;
+    }
   }
 
 }

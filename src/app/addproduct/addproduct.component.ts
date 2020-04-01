@@ -36,7 +36,6 @@ export class AddproductComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.prodForm.value);
     this.prod.CreateProduct(this.prodForm.value).subscribe(res => {
       console.log('Issue added!')
       this.ngZone.run(() => this.router.navigateByUrl('/admin/product'))
