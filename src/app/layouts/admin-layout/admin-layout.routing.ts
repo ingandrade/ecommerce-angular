@@ -1,47 +1,25 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from '../../home/home.component';
+import { AdminproductComponent } from '../../adminproduct/adminproduct.component';
+import { AddproductComponent } from '../../addproduct/addproduct.component';
+import { EditproductComponent } from '../../editproduct/editproduct.component';
 
 
 export const AdminLayoutRoutes: Routes = [
-    // {
-    //   path: '',
-    //   children: [ {
-    //     path: 'dashboard',
-    //     component: DashboardComponent
-    // }]}, {
-    // path: '',
-    // children: [ {
-    //   path: 'userprofile',
-    //   component: UserProfileComponent
-    // }]
-    // }, {
-    //   path: '',
-    //   children: [ {
-    //     path: 'icons',
-    //     component: IconsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'notifications',
-    //         component: NotificationsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'maps',
-    //         component: MapsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'typography',
-    //         component: TypographyComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'upgrade',
-    //         component: UpgradeComponent
-    //     }]
-    // }
+    {
+        path: 'home',
+        component: HomeComponent
+    },
+    {
+        path: 'admin/product',
+        component: AdminproductComponent
+    },
+    {
+        path: 'admin/addproduct',
+        component: AddproductComponent
+    },
+    {
+        path: 'admin/product/:id',
+        component: EditproductComponent
+    }
 ];

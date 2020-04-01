@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
 import { RouterModule } from '@angular/router';
 import { SplashComponent } from './splash/splash.component';
@@ -22,6 +22,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProductComponent } from './product/product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { IndexnavbarComponent } from './elements/indexnavbar/indexnavbar.component';
+import { ProductService } from './services/product.service';
+import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
+import { fakeBackendProvider } from './_helpers/fake-backend';
 
 
 
@@ -33,7 +36,7 @@ import { IndexnavbarComponent } from './elements/indexnavbar/indexnavbar.compone
     LoginComponent,
     ProductComponent,
     ProductDetailsComponent,
-    IndexnavbarComponent
+    IndexnavbarComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -50,9 +53,15 @@ import { IndexnavbarComponent } from './elements/indexnavbar/indexnavbar.compone
     MatSelectModule,
     MatTooltipModule,
     MatIconModule
-
   ],
-  providers: [],
+  providers: [
+    ProductService,
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

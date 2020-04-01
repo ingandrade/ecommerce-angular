@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/product.service';
 import { Product } from '../interface/product';
+import { ProductService } from '../services/product.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  selector: 'app-adminproduct',
+  templateUrl: './adminproduct.component.html',
+  styleUrls: ['./adminproduct.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class AdminproductComponent implements OnInit {
 
   produc: Product;
 

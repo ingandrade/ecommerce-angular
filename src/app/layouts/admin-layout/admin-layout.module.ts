@@ -9,6 +9,12 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import { HomeComponent } from '../../home/home.component';
+import { AdminproductComponent } from '../../adminproduct/adminproduct.component';
+import { AddproductComponent } from '../../addproduct/addproduct.component';
+import { EditproductComponent } from '../../editproduct/editproduct.component';
+
+
 
 @NgModule({
   imports: [
@@ -24,6 +30,10 @@ import {MatSelectModule} from '@angular/material/select';
     MatTooltipModule,
   ],
   declarations: [
+    HomeComponent,
+    AdminproductComponent,
+    AddproductComponent,
+    EditproductComponent
   ]
 })
 

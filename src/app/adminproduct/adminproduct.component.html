@@ -1,0 +1,60 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Product</h4>
+                        <p class="card-category">Products in the E-commerce</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Actions</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let p of produc">
+                                        <td>{{ p.id }}</td>
+                                        <td>{{ p.Title }} </td>
+                                        <td>{{ p.description | slice:0:40 }}...</td>
+                                        <td>{{ p.price }}</td>
+                                        <td class="text-primary">{{p.stock }}</td>
+                                        <td class="text-primary">
+                                            <button class="btn btn-info btn-round btn-fab mat-raised-button" matTooltip="Product show">
+                                                <span class="mat-button-wrapper">
+                                                    <i class="fa fa-eye"></i>
+                                                </span>
+                                                <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                                                <div class="mat-button-focus-overlay"></div>
+                                            </button>
+                                            <button class="btn btn-success btn-round btn-fab mat-raised-button" routerLink="/admin/product/{{ p.id }}" matTooltip="Product edit">
+                                                <span class="mat-button-wrapper">
+                                                    <i class="fa fa-pencil"></i>
+                                                </span>
+                                                <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                                                <div class="mat-button-focus-overlay"></div>
+                                            </button>
+                                            <button class="btn btn-danger btn-round btn-fab mat-raised-button" matTooltip="Product delete">
+                                                <span class="mat-button-wrapper">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                                <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                                                <div class="mat-button-focus-overlay"></div>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
